@@ -1,11 +1,117 @@
-.container {
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  --panel-color: rgb(30, 30, 30);
+  --border-color: rgba(228, 219, 219, 0.5);
+}
+
+.main-background {
+  background-image: url(../Assets/Images/a.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.navbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 1fr 1fr 5%;
+      grid-template-columns: 5% 1fr 1fr 5%;
+  color: black;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5vh;
+  z-index: 1;
+}
+
+.navbar .navbar-left {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.navbar .navbar-right {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: aquamarine;
+  list-style-type: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.background-transition {
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  top: 0%;
+  -ms-grid-columns: 5% 1fr 1fr 1fr 1fr 5%;
+      grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
+  height: 100vh;
+  width: 100%;
+}
+
+.background-transition .panel {
+  border-right: 1px solid var(--border-color);
+  background-color: var(--panel-color);
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+}
+
+.hero-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 600px;
+  width: 1100px;
+  background-color: white;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 6%;
+  padding-top: 5%;
+  padding-left: 3%;
+  font-family: "Work Sans", sans-serif;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.hero-panel .home-text1 {
+  font-size: 130px;
+  line-height: 120px;
+  font-weight: bolder;
+}
+
+.hero-panel .home-text2 {
+  font-size: 20px;
+  line-height: 50px;
+  font-weight: lighter;
+  letter-spacing: 4px;
+  padding-left: 1%;
 }
 /*# sourceMappingURL=main.css.map */

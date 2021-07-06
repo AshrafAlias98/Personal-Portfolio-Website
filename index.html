@@ -5,56 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ashrafalias</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans">
     <link rel="stylesheet" href="css\main.css">
-    <!-- <style>
-        .home {
-            display: flex;
-            background-color: aquamarine;
-            flex-direction: column;
-      }
-    </style> -->
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="container">
-            <nav>
-                <img src="Assets/Images/horse1.jpg" alt="Logo">
-                
-                <ul class="primary-nav">
-                    <li class="current"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact Me</a></li>
+
+    <div class="main-background">
+        <!-- Navbar section -->
+        <header>
+            <nav class="navbar">
+                <a class="navbar-left" href="#">AA</a>
+                <ul class="navbar-right">
+                    <li class="nav-item home"><a href="#">Home</a></li>
+                    <li class="nav-item about"><a href="#">About</a></li>
+                    <li class="nav-item skills"><a href="#">Skills</a></li>
+                    <li class="nav-item projects"><a href="#">Projects</a></li>
+                    <li class="nav-item contact-me"><a href="#">Contact Me</a></li>
                 </ul>
             </nav>
+        </header>
+
+        <!-- Hero's panel -->
+        <div class="hero-panel">
+            <h1 class="home-text1">Hi,</h1>
+            <h1 class="home-text1">I'm Ashraf.</h1>
+            <h3 class="home-text2">An inspiring <span class="typewriter-effect">Web Developer / RPA Developer</span></h3>
         </div>
+        
+        <!-- Background transition panel -->
+        <section class="background-transition">
+            <div class="panel box1"></div>
+            <div class="panel box2"></div>
+            <div class="panel box3"></div>
+            <div class="panel box4"></div>
+            <div class="panel box5"></div>
+            <div class="panel box6"></div>
+        </section>    
     </div>
 
-
-    <div class="hero">
-        <div class="container">
-            <p>Home</p>
-            <p>Hi, I'm Ashraf, a software engineer.</p>
-            <p>Web Development / RPA Development</p>
-            <p>Contact me</p>
-        </div>
-    </div>
-
-    <div class="about">
-        <div class="container">
-            <p>About</p>
-            <p>Keen on exploring/learning new technologies that would boost me in my journey to become a fulltime software engineer.</p>
-            <p>Currently challenging myself in web development and RPA development.</p>
-            <p>"Failure is another step to success."</p>
-        </div>
-    </div>
-
-    <div class="skills-experience">Skills & Experience</div>
-    <div class="project">Projects</div>
-    <div class="contact-me">Contact me</div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
 
 
 </body>
