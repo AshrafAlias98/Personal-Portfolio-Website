@@ -7,9 +7,9 @@ const box6 = document.querySelector('.box6');
 const hero = document.querySelector('.hero-panel');
 
 
-// Background panel slider animation
-function sliderBackgroundPanel() {
-  anime({
+// Background panel slider opening animation
+function sliderOpeningBackgroundPanel() {
+  var animation = anime({
     targets: [box1, box2, box3, box4, box5, box6],
     duration: 200,
     easing: "easeInOutQuad",
@@ -23,9 +23,49 @@ function sliderBackgroundPanel() {
       delay: (el, i, t) => i * 50 + 150
     }
   });
+
+  return animation;
 }
 
-// Hero's panel animation
+// Background panel slider closing animation
+function sliderClosingBackgroundPanel() {
+  box1.style.cssText = 'transform-origin: left;'
+  box2.style.cssText = 'transform-origin: left;'
+  box3.style.cssText = 'transform-origin: left;'
+  box4.style.cssText = 'transform-origin: left;'
+  box5.style.cssText = 'transform-origin: left;'
+  box6.style.cssText = 'transform-origin: left;'
+
+  anime({
+    targets: [box1, box2, box3, box4, box5, box6],
+    keyframes: [
+      {
+        scaleX: 0.003,
+        duration: 0,
+      },
+      {
+        duration: 200,
+        easing: "easeInOutQuad",
+        scaleX: 1,
+        delay: anime.stagger(50),
+        backgroundColor: {
+          value: "rgb(30, 30, 30)",
+          delay: (el, i, t) => i * 50 + 150
+        }
+      }
+    ]
+  });
+
+  return true;
+}
+
+// Background panel slider animation reset
+function sliderReset(animState) {
+  animState.pause();
+  animState.seek(0);
+}
+
+// Hero's panel animation (Open)
 function sliderOpenLeftToRight() {
   anime({
     targets: hero,
@@ -42,6 +82,22 @@ function sliderOpenLeftToRight() {
         duration: 500,
       }
     ]
+  })
+}
+
+// Hero's panel animation (Close)
+function sliderCloseRightToLeft() {
+  anime({
+    targets: hero,
+    keyframes: [
+      {
+        opacity: 0,
+        scaleX: 0,
+        easing: 'easeOutQuart',
+        duration: 500,
+      }
+    ],
+    delay: 300
   })
 }
 
@@ -66,6 +122,22 @@ function fadeInFromTop() {
   })
 }
 
+// Fading out animation (Text, navbar, etc.)
+function fadeOut() {
+  anime({
+    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.arrow-button', '.inspirational-quotes'],
+    // delay: anime.stagger(50, {start: 50}),
+    keyframes: [
+      {
+        opacity: 0,
+        translateY: 50,
+        easing: 'easeInCubic',
+        duration: 300,
+      }
+    ]
+  })
+}
+
 // Quotes slider animation
 function sliderQuoteAnimation() {
   const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
@@ -80,7 +152,7 @@ function sliderQuoteAnimation() {
     "“What is the point of being alive if you dont at least try to do something remarkable?” </br>- John Green"
   ]
 
-  anime({
+  var animation = anime({
     targets: '.inspirational-quotes',
     keyframes: [
       {
@@ -109,6 +181,8 @@ function sliderQuoteAnimation() {
       document.querySelector(".inspirational-quotes").innerHTML = dataQuotes[random(0, dataQuotes.length)];
     } 
   });
+
+  return animation;
 }
 
 // Type-writer animation
@@ -156,8 +230,29 @@ document.addEventListener('DOMContentLoaded', function(event) {
   StartTextAnimation(0);
 });
 
+// Reset animation of background panels and transition to next page
+document.getElementById("about-navigator").addEventListener('click', function () {
+  sliderReset(animState);
+  sliderReset(quoteState);
+  sliderClosingBackgroundPanel();
+  sliderCloseRightToLeft();
+  fadeOut();
+  setTimeout(() => {location.href = "../Pages/about.html";}, 500);
+})
+
+// Reset animation of background panels and transition to next page
+document.getElementById("arrow-button").addEventListener('click', function () {
+  sliderReset(animState);
+  sliderReset(quoteState);
+  sliderClosingBackgroundPanel();
+  sliderCloseRightToLeft();
+  fadeOut();
+  setTimeout(() => {location.href = "../Pages/about.html";}, 500);
+})
+
+
 // Function callbacks
-sliderBackgroundPanel();
+var animState = sliderOpeningBackgroundPanel();
 sliderOpenLeftToRight();
 fadeInFromTop();
-sliderQuoteAnimation();
+var quoteState = sliderQuoteAnimation();
