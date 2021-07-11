@@ -78,17 +78,20 @@
   display: grid;
   position: absolute;
   top: 0%;
-  -ms-grid-columns: 5% 1fr 1fr 1fr 1fr 5%;
-      grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
+  -ms-grid-columns: 5% 1px 1fr 1px 1fr 1px 1fr 1px 1fr 1px 5%;
+      grid-template-columns: 5% 1px 1fr 1px 1fr 1px 1fr 1px 1fr 1px 5%;
   height: 100vh;
   width: 100%;
 }
 
 .background-transition .panel {
-  border-right: 1px solid rgba(219, 219, 219, 0.5);
   background-color: #1e1e1e;
   -webkit-transform-origin: right;
           transform-origin: right;
+}
+
+.background-transition .line {
+  background-color: rgba(219, 219, 219, 0.8);
 }
 
 .hero-panel {
@@ -386,16 +389,19 @@
   display: grid;
   position: absolute;
   top: 0%;
-  -ms-grid-columns: 5% 1fr 1fr 1fr 1fr 5%;
-      grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
+  -ms-grid-columns: 5% 1px 1fr 1px 1fr 1.5px 1fr 1.5px 1fr 1.5px 5%;
+      grid-template-columns: 5% 1px 1fr 1px 1fr 1.5px 1fr 1.5px 1fr 1.5px 5%;
   height: 100vh;
   width: 100%;
 }
 
 .background-transition .panel {
-  border-right: 1px solid rgba(219, 219, 219, 0.5);
   background-color: #1e1e1e;
-  -webkit-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.background-transition .line {
+  background-color: rgba(219, 219, 219, 0.8);
 }
 /*# sourceMappingURL=main.css.map */

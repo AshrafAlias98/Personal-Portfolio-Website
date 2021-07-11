@@ -1,27 +1,20 @@
 const box1 = document.querySelector('.box1');
-const box2 = document.querySelector('.box2');
 const box3 = document.querySelector('.box3');
-const box4 = document.querySelector('.box4');
 const box5 = document.querySelector('.box5');
-const box6 = document.querySelector('.box6');
+const box7 = document.querySelector('.box7');
+const box9 = document.querySelector('.box9');
+const box11 = document.querySelector('.box11');
 const hero = document.querySelector('.hero-panel');
 
 
 // Background panel slider opening animation
 function sliderOpeningBackgroundPanel() {
   var animation = anime({
-    targets: [box1, box2, box3, box4, box5, box6],
+    targets: [box1, box3, box5, box7, box9, box11],
     duration: 200,
     easing: "easeInOutQuad",
-    scaleX: (el, i, t) => {
-      var originalWidth = anime.get(el, "width", "%");
-      return (el === box6) ? 0 : 1 / (originalWidth/0.075);
-    },
-    delay: anime.stagger(50),
-    backgroundColor: {
-      value: "rgba(255, 255, 255, 0.5)",
-      delay: (el, i, t) => i * 50 + 150
-    }
+    scaleX: 0,
+    delay: anime.stagger(50)
   });
 
   return animation;
@@ -30,14 +23,14 @@ function sliderOpeningBackgroundPanel() {
 // Background panel slider closing animation
 function sliderClosingBackgroundPanel() {
   box1.style.cssText = 'transform-origin: left;'
-  box2.style.cssText = 'transform-origin: left;'
   box3.style.cssText = 'transform-origin: left;'
-  box4.style.cssText = 'transform-origin: left;'
   box5.style.cssText = 'transform-origin: left;'
-  box6.style.cssText = 'transform-origin: left;'
+  box7.style.cssText = 'transform-origin: left;'
+  box9.style.cssText = 'transform-origin: left;'
+  box11.style.cssText = 'transform-origin: left;'
 
   anime({
-    targets: [box1, box2, box3, box4, box5, box6],
+    targets: [box1, box3, box5, box7, box9, box11],
     keyframes: [
       {
         scaleX: 0.003,
@@ -48,10 +41,6 @@ function sliderClosingBackgroundPanel() {
         easing: "easeInOutQuad",
         scaleX: 1,
         delay: anime.stagger(50),
-        backgroundColor: {
-          value: "rgb(30, 30, 30)",
-          delay: (el, i, t) => i * 50 + 150
-        }
       }
     ]
   });
@@ -230,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   StartTextAnimation(0);
 });
 
-// Reset animation of background panels and transition to next page
+// Reset animation of background panels and transition to next page (Click on About)
 document.getElementById("about-navigator").addEventListener('click', function () {
   sliderReset(animState);
   sliderReset(quoteState);
@@ -240,7 +229,7 @@ document.getElementById("about-navigator").addEventListener('click', function ()
   setTimeout(() => {location.href = "../Pages/about.html";}, 500);
 })
 
-// Reset animation of background panels and transition to next page
+// Reset animation of background panels and transition to next page (Click on Arrow-button in Home page)
 document.getElementById("arrow-button").addEventListener('click', function () {
   sliderReset(animState);
   sliderReset(quoteState);
