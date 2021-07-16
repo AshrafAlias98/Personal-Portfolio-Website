@@ -115,7 +115,6 @@ function fadeInFromTop() {
 function fadeOut() {
   anime({
     targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.arrow-button', '.inspirational-quotes'],
-    // delay: anime.stagger(50, {start: 50}),
     keyframes: [
       {
         opacity: 0,
@@ -220,13 +219,23 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 // Reset animation of background panels and transition to next page (Click on About)
-document.getElementById("about-navigator").addEventListener('click', function () {
+document.getElementById("project-navigator").addEventListener('click', function () {
   sliderReset(animState);
   sliderReset(quoteState);
   sliderClosingBackgroundPanel();
   sliderCloseRightToLeft();
   fadeOut();
-  setTimeout(() => {location.href = "../Pages/about.html";}, 500);
+  setTimeout(() => {location.href = "../Pages/project.html";}, 500);
+})
+
+// Reset animation of background panels and transition to next page (Click on About)
+document.getElementById("contact-navigator").addEventListener('click', function () {
+  sliderReset(animState);
+  sliderReset(quoteState);
+  sliderClosingBackgroundPanel();
+  sliderCloseRightToLeft();
+  fadeOut();
+  setTimeout(() => {location.href = "../Pages/contact.html";}, 500);
 })
 
 // Reset animation of background panels and transition to next page (Click on Arrow-button in Home page)
@@ -236,7 +245,7 @@ document.getElementById("arrow-button").addEventListener('click', function () {
   sliderClosingBackgroundPanel();
   sliderCloseRightToLeft();
   fadeOut();
-  setTimeout(() => {location.href = "../Pages/about.html";}, 500);
+  setTimeout(() => {location.href = "../Pages/project.html";}, 500);
 })
 
 

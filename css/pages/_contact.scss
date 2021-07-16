@@ -1,0 +1,194 @@
+.main-background {
+  background-image: url(../Assets/Images/main-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+// NAVIGATION BAR
+.navbar {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  font-family: $primary-font;
+  font-weight: lighter;
+  font-size: 16px;
+
+  .navbar-right {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: row;
+    list-style-type: none;
+    width: 100%;
+    margin-top: 2%;
+    z-index: 5;
+
+    .nav-item {
+      padding: 5px 25px;
+
+      &:hover {
+        background-color: rgba(218, 165, 32, 0.7);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: rgba(218, 165, 32, 0.7);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+// BACKGROUND PANEL TRANSITION
+.background-transition {
+  display: grid;
+  position: absolute;
+  top: 0%;
+  grid-template-columns: 5% 1px 1fr 1px 1fr 1.5px 1fr 1.5px 1fr 1.5px 5%;
+  height: 100vh;
+  width: 100%;
+
+  .panel {
+    background-color: $primary-background-color;
+    transform-origin: right;
+  }
+
+  .line {
+    background-color: $transitional-panel-lines-color;
+  }
+}
+
+.container-header3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  background-color: rgba(10, 10, 10, 0.9);
+  margin-top: 5%;
+  margin-left: 28.5%;
+  height: 70vh;
+  width: 43%;
+  padding: 30px;
+  border-radius: 10px;
+  color: $primary-text-color;
+  font-family: $primary-font;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+  .contact-header {
+    text-align: center;
+    font-size: 80px;
+    font-weight: bolder;
+    margin-bottom: 2%;
+  }
+
+  .contact-subheader {
+    text-align: center;
+    font-weight: lighter;
+    opacity: 0.7;
+  }
+
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .contact-name {
+      margin-top: 5%;
+    }
+
+    .contact-email {
+      margin-top: 6%;
+    }
+
+    .contact-message {
+      margin-top: 6%;
+    }
+
+    input[type="text"] {
+      border: none;
+      border-bottom: 2px solid $primary-text-color;
+      padding: 10px;
+      background-color: transparent;
+      color: $primary-text-color;
+      margin-top: 1%;
+    }
+
+    input:hover[type="text"] {
+      border-bottom: 2px solid $accent-color-1;
+    }
+
+    .horizontal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 60px;
+      margin-top: 20px;
+      border: 2px solid goldenrod;
+      cursor: pointer;
+      color: $primary-text-color;
+      font-family: $primary-font;
+      text-decoration: none;
+
+      .contact-button {
+        position: relative;
+        color: transparent;
+        background-image: linear-gradient(
+          90deg,
+          white 0%,
+          white 50%,
+          goldenrod 50%,
+          goldenrod 100%
+        );
+        background-repeat: repeat;
+        background-size: 200%;
+        background-position: 100% 0;
+        background-clip: text;
+        transition: background-position 300ms;
+        font-weight: bolder;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: goldenrod;
+        transform-origin: 100% 0;
+        transform: scale3d(0, 1, 1);
+        transition: transform 300ms;
+      }
+
+      &:hover {
+        .contact-button {
+          background-position: 0 0;
+        }
+
+        &::before {
+          transform-origin: 0 0;
+          transform: scale3d(1, 1, 1);
+        }
+      }
+    }
+  }
+}
