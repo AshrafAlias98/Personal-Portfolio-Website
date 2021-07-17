@@ -21,7 +21,7 @@ function sliderOpenTopBackgroundPanel(partial) {
 
     anime({
       targets: [box1, box3, box5, box7, box9, box11],
-      scaleY: (el, i, t) => el==box3 || el==box5 ? 1 - (random(1, 1.25)/10) : 1 - (random(1, 2.5)/10),
+      scaleY: (el, i, t) => el==box1 || el==box3 || el==box5 ? 1 - (random(1, 1.25)/10) : 1 - (random(1, 2.5)/10),
       duration: 300,
       easing: 'easeOutElastic',
       elasticity: 300,
@@ -41,7 +41,7 @@ function sliderOpenTopBackgroundPanel(partial) {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.navbar-right', '.project-header', '.about-me', '.card'],
+    targets: ['.navbar-right', '.project-header', '.about-me', '.card', '.socials'],
     delay: anime.stagger(50, {start: 200}),
     keyframes: [
       {
@@ -63,7 +63,7 @@ function fadeInFromTop() {
 function fadeOut(inPlace) {
   if (!inPlace) {
     anime({
-      targets: ['.navbar-right' ,'.project-header', '.about-me'],
+      targets: ['.navbar-right' ,'.project-header', '.about-me', '.socials'],
       keyframes: [
       {
           opacity: 0,

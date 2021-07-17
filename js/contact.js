@@ -83,7 +83,7 @@ function sliderCloseRightToLeft() {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
     anime({
-      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form'],
+      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
       delay: anime.stagger(50, {start: 200}),
       keyframes: [
         {
@@ -104,7 +104,7 @@ function fadeInFromTop() {
 // Fading out animation (Text, navbar, etc.)
 function fadeOut() {
     anime({
-      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form'],
+      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
       keyframes: [
         {
           opacity: 0,

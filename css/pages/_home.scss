@@ -90,8 +90,18 @@
   transform-origin: left;
 
   .home-text1 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: $primary-text-color;
+    margin-left: 1%;
+
+    &:hover {
+      color: $accent-color-1;
+    }
+  }
+
+  .home-text2 {
     font-size: 130px;
-    line-height: 120px;
     font-weight: bolder;
     color: $primary-text-color;
 
@@ -100,13 +110,14 @@
     }
   }
 
-  .home-text2 {
+  .home-text3 {
     font-size: 20px;
-    line-height: 50px;
+    line-height: 30px;
+    margin-top: 2%;
+    width: 70%;
     font-weight: lighter;
-    letter-spacing: 4px;
     padding-left: 1%;
-    color: $primary-text-color;
+    color: rgb(150, 150, 150);
 
     &:hover {
       color: $accent-color-1;
@@ -206,27 +217,46 @@
   }
 }
 
-// INSPIRATIONAL QUOTES SLIDER
-.container-quotes {
+.social-media {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 0%;
-  left: 76%;
-  z-index: 3;
-  width: 300px;
-  height: 100vh;
   font-family: $primary-font;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 7px;
+  writing-mode: vertical-lr;
+  height: 100vh;
+  width: 5%;
+  top: 0%;
+  right: 0%;
 
-  .inspirational-quotes {
-    color: $primary-text-color;
-    line-height: 50px;
+  .linked-in {
+    flex-grow: 1;
     text-align: center;
-    line-height: 40px;
-    font-weight: lighter;
-    letter-spacing: 3px;
-    text-shadow: 1px 1px 20px rgb(200, 200, 200);
+    align-self: center;
+    margin-top: 20%;
+    text-decoration: none;
+    color: rgb(130, 130, 130);
+    z-index: 10;
+  }
+
+  .linked-in:hover {
+    transform: scale(1.1);
+    color: goldenrod;
+  }
+
+  .github {
+    flex-grow: 1;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 20%;
+    text-decoration: none;
+    color: rgb(130, 130, 130);
+    z-index: 10;
+  }
+
+  .github:hover {
+    transform: scale(1.1);
+    color: goldenrod;
   }
 }

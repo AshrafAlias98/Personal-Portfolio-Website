@@ -93,7 +93,7 @@ function sliderCloseRightToLeft() {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.arrow-button'],
+    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     delay: anime.stagger(50, {start: 200}),
     keyframes: [
       {
@@ -114,7 +114,7 @@ function fadeInFromTop() {
 // Fading out animation (Text, navbar, etc.)
 function fadeOut() {
   anime({
-    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.arrow-button', '.inspirational-quotes'],
+    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     keyframes: [
       {
         opacity: 0,
@@ -126,102 +126,9 @@ function fadeOut() {
   })
 }
 
-// Quotes slider animation
-function sliderQuoteAnimation() {
-  const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-  const dataQuotes = [
-    "“I have not failed. I've just found 10,000 ways that won't work.” </br>- Thomas A. Edison", 
-    "“Failure isnt fatal, but failure to change might be.” </br>- John Wooden", 
-    "“There is no failure except in no longer trying.” </br>- Chris Bradford",
-    "“The only real mistake is the one from which we learn nothing.” </br>- Henry Ford",
-    "“Success is stumbling from failure to failure with no loss of enthusiasm.” </br>- Winston Churchill",
-    "“Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success.” </br>- Robert T. Kiyosaki",
-    "“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.” </br>- Eloise Ristad",
-    "“What is the point of being alive if you dont at least try to do something remarkable?” </br>- John Green"
-  ]
-
-  var animation = anime({
-    targets: '.inspirational-quotes',
-    keyframes: [
-      {
-        opacity: 0,
-        translateY: -100,
-        duration: 0,        
-      },
-      {
-        opacity: 1,
-        translateY: 0,
-        duration: 500,
-        easing: 'easeInCubic'
-      },
-      {
-        duration: 3000
-      },
-      {
-        opacity: 0,
-        translateY: 100,
-        duration: 500,
-        easing: 'easeOutQuart'
-      }
-    ],
-    loop: true,
-    loopComplete: () => {
-      document.querySelector(".inspirational-quotes").innerHTML = dataQuotes[random(0, dataQuotes.length)];
-    } 
-  });
-
-  return animation;
-}
-
-// Type-writer animation
-document.addEventListener('DOMContentLoaded', function(event) {
-  var dataText = [ "Web Developer.", "RPA Developer.", "UI/UX Enthusiast."];
-
-  // Typewrite effect animation
-  function typeWriter(text, i, fnCallback) {
-    if (i < (text.length)) {
-      document.querySelector(".typewriter-effect").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';  // Add next character to .typewriter-effect
-      // Recursively call this function again until the text is fully typed
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 100);
-    }
-    // Text has finished typing. Now calling typeEraser() to erase the text 
-    else {
-      setTimeout(function() {
-        typeEraser(text, i, fnCallback)
-      }, 2000);
-    } 
-  }
-
-  function typeEraser(text, i, fnCallback) {
-    if (i > 1) {
-      document.querySelector(".typewriter-effect").innerHTML = text.substring(0, i-1) +'<span aria-hidden="true"></span>';
-      // Recursively call this function again until the text is fully erased
-      setTimeout(function() {
-        typeEraser(text, i - 1, fnCallback)
-      }, 100);
-    } else {
-      // Text is fully processed (Typed and erased). Now, calling the next text to animate
-      setTimeout(fnCallback, 100);
-    }
-  }
-
-  function StartTextAnimation(i) {
-    if (i < dataText.length) {
-      typeWriter(dataText[i], 0, function() {StartTextAnimation(i + 1);}); // After callback (and whole text has been animated), start next text
-    } else {
-      setTimeout(() => StartTextAnimation(0), 100);
-    }
-  }
-
-  StartTextAnimation(0);
-});
-
 // Reset animation of background panels and transition to next page (Click on About)
 document.getElementById("project-navigator").addEventListener('click', function () {
   sliderReset(animState);
-  sliderReset(quoteState);
   sliderClosingBackgroundPanel();
   sliderCloseRightToLeft();
   fadeOut();
@@ -231,7 +138,6 @@ document.getElementById("project-navigator").addEventListener('click', function 
 // Reset animation of background panels and transition to next page (Click on About)
 document.getElementById("contact-navigator").addEventListener('click', function () {
   sliderReset(animState);
-  sliderReset(quoteState);
   sliderClosingBackgroundPanel();
   sliderCloseRightToLeft();
   fadeOut();
@@ -241,7 +147,6 @@ document.getElementById("contact-navigator").addEventListener('click', function 
 // Reset animation of background panels and transition to next page (Click on Arrow-button in Home page)
 document.getElementById("arrow-button").addEventListener('click', function () {
   sliderReset(animState);
-  sliderReset(quoteState);
   sliderClosingBackgroundPanel();
   sliderCloseRightToLeft();
   fadeOut();
@@ -253,4 +158,3 @@ document.getElementById("arrow-button").addEventListener('click', function () {
 var animState = sliderOpeningBackgroundPanel();
 sliderOpenLeftToRight();
 fadeInFromTop();
-var quoteState = sliderQuoteAnimation();

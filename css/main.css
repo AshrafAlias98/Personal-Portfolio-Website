@@ -120,10 +120,10 @@
 }
 
 .hero-panel .home-text1 {
-  font-size: 130px;
-  line-height: 120px;
+  font-size: 30px;
   font-weight: bolder;
   color: white;
+  margin-left: 1%;
 }
 
 .hero-panel .home-text1:hover {
@@ -131,15 +131,26 @@
 }
 
 .hero-panel .home-text2 {
-  font-size: 20px;
-  line-height: 50px;
-  font-weight: lighter;
-  letter-spacing: 4px;
-  padding-left: 1%;
+  font-size: 130px;
+  font-weight: bolder;
   color: white;
 }
 
 .hero-panel .home-text2:hover {
+  color: goldenrod;
+}
+
+.hero-panel .home-text3 {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 2%;
+  width: 70%;
+  font-weight: lighter;
+  padding-left: 1%;
+  color: #969696;
+}
+
+.hero-panel .home-text3:hover {
   color: goldenrod;
 }
 
@@ -283,37 +294,62 @@
   }
 }
 
-.container-quotes {
+.social-media {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0%;
-  left: 76%;
-  z-index: 3;
-  width: 300px;
-  height: 100vh;
   font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 7px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  height: 100vh;
+  width: 5%;
+  top: 0%;
+  right: 0%;
 }
 
-.container-quotes .inspirational-quotes {
-  color: white;
-  line-height: 50px;
+.social-media .linked-in {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: center;
-  line-height: 40px;
-  font-weight: lighter;
-  letter-spacing: 3px;
-  text-shadow: 1px 1px 20px #c8c8c8;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .linked-in:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
+}
+
+.social-media .github {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .github:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
 }
 
 .main-background {
@@ -424,6 +460,11 @@
 .container-header .about-me {
   margin-top: 4%;
   width: 57%;
+  line-height: 25px;
+}
+
+.container-header .highlight {
+  color: goldenrod;
 }
 
 .card-container {
@@ -452,6 +493,64 @@
   color: white;
   font-family: "Work Sans", sans-serif;
   text-align: center;
+}
+
+.social-media {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 7px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  height: 100vh;
+  width: 5%;
+  top: 0%;
+  right: 0%;
+}
+
+.social-media .linked-in {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .linked-in:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
+}
+
+.social-media .github {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .github:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
 }
 
 .main-background {
@@ -683,5 +782,63 @@
           transform-origin: 0 0;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
+}
+
+.social-media {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 7px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  height: 100vh;
+  width: 5%;
+  top: 0%;
+  right: 0%;
+}
+
+.social-media .linked-in {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .linked-in:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
+}
+
+.social-media .github {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 20%;
+  text-decoration: none;
+  color: #828282;
+  z-index: 10;
+}
+
+.social-media .github:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: goldenrod;
 }
 /*# sourceMappingURL=main.css.map */
