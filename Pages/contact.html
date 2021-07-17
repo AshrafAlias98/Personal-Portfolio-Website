@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ashrafalias</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <div class="main-background">
+        <!-- Navbar section -->
+        <nav class="navbar">
+            <ul class="navbar-right">
+                <li class="nav-item home"><a id="home-navigator-3">Home</a></li>
+                <li class="nav-item projects"><a id="project-navigator-3">Projects</a></li>
+                <li class="nav-item contact-me"><a href="./contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Background transition panel -->
+        <section class="background-transition">
+            <div class="panel box1"></div>
+            <div class="line box2"></div>
+            <div class="panel box3"></div>
+            <div class="line box4"></div>
+            <div class="panel box5"></div>
+            <div class="line box6"></div>
+            <div class="panel box7"></div>
+            <div class="line box8"></div>
+            <div class="panel box9"></div>
+            <div class="line box10"></div>
+            <div class="panel box11"></div>
+        </section>   
+
+        <div class="container-header3">
+            <p class="contact-header">Get In Touch.</p>
+            <p class="contact-subheader">I'm open for any opportunities! Or just want to say hi?</p>
+            <p class="contact-subheader">Feel free to send me a message!</p>
+            <form id="contact-form" method="POST" action="../php/contact-form-handler.php">
+                <p class="contact-name">Name</p>
+                <input name="name" type="text" placeholder="Your Name" required>
+                <p class="contact-email">Email</p>
+                <input name="email" type="text" placeholder="Your Email" required>
+                <p class="contact-message">Message </p>
+                <input name="message" type="text" placeholder="Message" row="4" required>
+                <a href="#" class="horizontal"><span class="contact-button">SEND MESSAGE</span></a>
+            </form>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/ashraf-alias/" class="socials linked-in" target="_blank">LINKEDIN</a>
+            <a href="https://github.com/AshrafAlias98?tab=repositories" class="socials github" target="_blank">GITHUB</a>
+        </div>
+    
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/contact.js"></script>
+
+
+</body>
+</html>
