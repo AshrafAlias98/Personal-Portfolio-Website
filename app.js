@@ -21,7 +21,7 @@ $(document).ready(function() {
     var preloader = $('.sk-cube-wrapper');
     setTimeout(() => {
       preloader.fadeOut(preloaderFadeTime);
-    }, 2000) 
+    }, 100) 
   }
 
   hidePreloader();
@@ -36,9 +36,6 @@ function sliderOpeningBackgroundPanel() {
     scaleX: 0,
     delay: anime.stagger(50)
   });
-
-  animState.pause();
-  animState.seek(0);
 }
 
 // Background panel slider closing animation
@@ -177,5 +174,5 @@ setTimeout(() => {
   sliderOpeningBackgroundPanel();
   sliderOpenLeftToRight();
   fadeInFromTop();
-}, 2000);
+}, 100);
 
