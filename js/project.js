@@ -5,6 +5,26 @@ const box7 = document.querySelector('.box7');
 const box9 = document.querySelector('.box9');
 const box11 = document.querySelector('.box11');
 
+const box2 = document.querySelector('.box2');
+const box4 = document.querySelector('.box4');
+const box6 = document.querySelector('.box6');
+const box8 = document.querySelector('.box8');
+const box10 = document.querySelector('.box10');
+
+
+$(document).ready(function() {
+  //Preloader
+  var preloaderFadeTime = 300;
+  
+  function hidePreloader() {
+    var preloader = $('.sk-cube-wrapper');
+    setTimeout(() => {
+      preloader.fadeOut(preloaderFadeTime);
+    }, 500) 
+  }
+
+  hidePreloader();
+  });
 
 // Background panel slider from top animation
 function sliderOpenTopBackgroundPanel(partial) {
@@ -34,7 +54,13 @@ function sliderOpenTopBackgroundPanel(partial) {
       duration: 400,
       easing: 'easeOutCubic',
       delay: (el, i, t) => i * 100 + 50
-    })
+    });
+    anime({
+      targets: [box2, box4, box6, box8, box10],
+      opacity: 0,
+      delay: 500,
+      duration: 2000
+    });
   }
 }
 
@@ -112,5 +138,7 @@ VanillaTilt.init(document.querySelectorAll(".card"), {
 });
 
 // Function callbacks
-fadeInFromTop();
-sliderOpenTopBackgroundPanel(true);
+setTimeout(() => {
+  fadeInFromTop();
+  sliderOpenTopBackgroundPanel(true);
+}, 500);
