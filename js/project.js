@@ -41,8 +41,8 @@ function sliderOpenTopBackgroundPanel(partial) {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.navbar-right', '.project-header', '.about-me', '.card', '.socials'],
-    delay: anime.stagger(50, {start: 200}),
+    targets: ['.navbar-right', '.project-header', '.about-me', '.card', '.socials', '.horizontal'],
+    delay: anime.stagger(15, {start: 200}),
     keyframes: [
       {
         opacity: 0,
@@ -63,7 +63,7 @@ function fadeInFromTop() {
 function fadeOut(inPlace) {
   if (!inPlace) {
     anime({
-      targets: ['.navbar-right' ,'.project-header', '.about-me', '.socials'],
+      targets: ['.navbar-right' ,'.project-header', '.about-me', '.socials', '.horizontal'],
       keyframes: [
       {
           opacity: 0,

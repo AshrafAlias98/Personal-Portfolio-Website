@@ -467,6 +467,70 @@
   color: goldenrod;
 }
 
+.container-header .horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 57%;
+  height: 60px;
+  margin-top: 30px;
+  border: 2px solid goldenrod;
+  cursor: pointer;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  text-decoration: none;
+}
+
+.container-header .horizontal .resume-button {
+  position: relative;
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(50%, white), color-stop(50%, goldenrod), to(goldenrod));
+  background-image: linear-gradient(90deg, white 0%, white 50%, goldenrod 50%, goldenrod 100%);
+  background-repeat: repeat;
+  background-size: 200%;
+  background-position: 100% 0;
+  background-clip: text;
+  -webkit-transition: background-position 300ms;
+  transition: background-position 300ms;
+  font-weight: bolder;
+}
+
+.container-header .horizontal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: goldenrod;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.container-header .horizontal:hover .resume-button {
+  background-position: 0 0;
+}
+
+.container-header .horizontal:hover::before {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
 .card-container {
   position: absolute;
   display: -webkit-box;
@@ -603,13 +667,6 @@
 }
 
 .navbar .navbar-right .nav-item:hover {
-  background-color: rgba(218, 165, 32, 0.7);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  cursor: pointer;
-}
-
-.navbar .navbar-right .nav-item:active {
   background-color: rgba(218, 165, 32, 0.7);
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
           box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
