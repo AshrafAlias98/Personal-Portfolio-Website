@@ -2,7 +2,7 @@
 My Personal Portfolio for my journey to become a software engineer!!!
 
 The website is still currently under development. Target completion: 25 July 2021
-<br>Temporarily hosted in Netlify: https://fervent-yalow-d12315.netlify.app
+<br>Temporarily hosted in Netlify: https://fervent-yalow-d12315.netlify.app (Note, the website is still partially responsive)
 
 <br>Completed:
 1. Main components of the website (Home, Project and Contact page)
@@ -16,7 +16,7 @@ In-Progress:
 4. Hosting the final website with my own domain name
 5. Final user testing for performance & usability
 
-<br>Below are the screenshots of the website interface (Note, the website is still partially responsive)
+<br>Below are the screenshots of the website interface 
 1. Home page
 ![1](https://user-images.githubusercontent.com/79066503/126161074-fda8dbd0-1b43-46f5-bd58-328ff2ab99b2.PNG)
 
