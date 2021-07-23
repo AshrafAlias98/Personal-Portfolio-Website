@@ -4,8 +4,29 @@ const box5 = document.querySelector('.box5');
 const box7 = document.querySelector('.box7');
 const box9 = document.querySelector('.box9');
 const box11 = document.querySelector('.box11');
+
+const box2 = document.querySelector('.box2');
+const box4 = document.querySelector('.box4');
+const box6 = document.querySelector('.box6');
+const box8 = document.querySelector('.box8');
+const box10 = document.querySelector('.box10');
 const panel = document.querySelector('.panel3');
 const contactPanel = document.querySelector('.container-header3');
+
+
+$(document).ready(function() {
+  //Preloader
+  var preloaderFadeTime = 300;
+
+  function hidePreloader() {
+    var preloader = $('.sk-cube-wrapper');
+    setTimeout(() => {
+      preloader.fadeOut(preloaderFadeTime);
+    }, 500) 
+  }
+
+  hidePreloader();
+  });
 
 // Background panel slider from top animation
 function sliderCloseBottomBackgroundPanel() {
@@ -20,7 +41,14 @@ function sliderCloseBottomBackgroundPanel() {
         ],
         easing: 'easeOutQuart',
         delay: (el, i, t) => i * 100 + 50
-    })
+    });
+    anime({
+      targets: [box2, box4, box6, box8, box10],
+      backgroundColor: 'rgb(30, 30, 30)',
+      opacity: 0.95,
+      delay: 500,
+      duration: 400
+    });
 }
 
 // Background panel slider from top animation
@@ -33,13 +61,13 @@ function sliderResetBackgroundPanel() {
     box11.style.cssText = 'transform-origin: bottom; opacity: 0;'
 
     anime({
-        targets: [box1, box3, box5, box7, box9, box11],
-        keyframes: [
-            {
-                scaleY: 0.01,
-            },
-        ],
-        easing: 'easeOutQuart',
+      targets: [box1, box3, box5, box7, box9, box11],
+      keyframes: [
+          {
+              scaleY: 0.01,
+          },
+      ],
+      easing: 'easeOutQuart',
     })
 }
 
@@ -134,6 +162,8 @@ document.getElementById("project-navigator-3").addEventListener('click', functio
 
 
 // Function callbacks
-sliderResetBackgroundPanel();
-fadeInFromTop();
-sliderOpenLeftToRight();
+setTimeout(() => {
+  sliderResetBackgroundPanel();
+  fadeInFromTop();
+  sliderOpenLeftToRight();
+}, 500);
