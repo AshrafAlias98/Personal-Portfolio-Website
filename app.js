@@ -12,6 +12,8 @@ const box8 = document.querySelector('.box8');
 const box10 = document.querySelector('.box10');
 const hero = document.querySelector('.hero-panel');
 
+var translateValue;
+
 
 $(document).ready(function() {
   //Preloader
@@ -112,7 +114,7 @@ function sliderCloseRightToLeft() {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
+    targets: ['.logo', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     delay: anime.stagger(50, {start: 200}),
     keyframes: [
       {
@@ -133,7 +135,7 @@ function fadeInFromTop() {
 // Fading out animation (Text, navbar, etc.)
 function fadeOut() {
   anime({
-    targets: ['.navbar-right' ,'.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
+    targets: ['.logo', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     keyframes: [
       {
         opacity: 0,
@@ -142,6 +144,15 @@ function fadeOut() {
         duration: 300,
       }
     ]
+  })
+}
+
+function navigatorSlideIn() {
+  anime({
+    targets: '.navbar-right',
+    easing: 'easeInCubic',
+    duration: 500,
+    translateX: -400
   })
 }
 
@@ -169,6 +180,9 @@ document.getElementById("arrow-button").addEventListener('click', function () {
   setTimeout(() => {location.href = "../Pages/project.html";}, 500);
 })
 
+
+ 
+
 // Function callbacks
 setTimeout(() => {
   sliderOpeningBackgroundPanel();
@@ -176,3 +190,46 @@ setTimeout(() => {
   fadeInFromTop();
 }, 100);
 
+// Detect the changes in media query (Changing size during runtime)
+const mediaQueryMobile = window.matchMedia('(max-width: 900px)');
+mediaQueryMobile.addEventListener('change', (e) => {
+  if (e.matches) {
+    anime({
+      targets: '.navbar-right',
+      translateX: '100%',
+      duration: 0
+    })
+  } else {
+    anime({
+      targets: '.navbar-right',
+      translateX: '0%',
+      duration: 0
+    })
+  }
+  translateValue = '100%';
+})
+
+// Detecting the changes in the initial media query (Static)
+if (window.matchMedia('(max-width: 900px)').matches) {
+  anime({
+    targets: '.navbar-right',
+    translateX: '100%',
+    duration: 0
+  })
+}
+
+
+document.querySelector('.burger').addEventListener('click', () => {
+  if (translateValue == '0%') {
+    translateValue = '100%';
+  }else {
+    translateValue = '0%';
+  }
+
+  anime({
+    targets: '.navbar-right',
+    easing: 'easeInCubic',
+    duration: 400,
+    translateX: translateValue
+  })
+})
