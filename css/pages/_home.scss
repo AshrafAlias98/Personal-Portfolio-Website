@@ -3,7 +3,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 61%;
+  height: clamp(550px, 61vh, 800px);
   width: 56%;
   margin-top: 5%;
   margin-left: 6%;
@@ -181,7 +181,10 @@
       top: 0px;
       height: 100vh;
       row-gap: 5vh;
-      width: 30%;
+      width: 50%;
+      border-left: 1px solid $secondary-text-color;
+      border-top: 1px solid $secondary-text-color;
+      border-top-left-radius: 5px;
       background-color: $primary-background-color;
 
       .home {

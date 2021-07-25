@@ -13,6 +13,7 @@ const box10 = document.querySelector('.box10');
 const panel = document.querySelector('.panel3');
 const contactPanel = document.querySelector('.container-header3');
 
+var translateValue;
 
 $(document).ready(function() {
   //Preloader
@@ -111,7 +112,7 @@ function sliderCloseRightToLeft() {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
     anime({
-      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
+      targets: ['.logo', '.burger', '.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
       delay: anime.stagger(50, {start: 200}),
       keyframes: [
         {
@@ -132,7 +133,7 @@ function fadeInFromTop() {
 // Fading out animation (Text, navbar, etc.)
 function fadeOut() {
     anime({
-      targets: ['.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
+      targets: ['.logo', '.burger', '.navbar-right', '.contact-header', '.contact-subheader', '#contact-form', '.socials'],
       keyframes: [
         {
           opacity: 0,
@@ -167,3 +168,47 @@ setTimeout(() => {
   fadeInFromTop();
   sliderOpenLeftToRight();
 }, 500);
+
+// Detect the changes in media query (Changing size during runtime)
+const mediaQueryMobile = window.matchMedia('(max-width: 900px)');
+mediaQueryMobile.addEventListener('change', (e) => {
+  if (e.matches) {
+    anime({
+      targets: '.navbar-right',
+      translateX: '100%',
+      duration: 0
+    })
+  } else {
+    anime({
+      targets: '.navbar-right',
+      translateX: '0%',
+      duration: 0
+    })
+  }
+  translateValue = '100%';
+})
+
+// Detecting the changes in the initial media query (Static)
+if (window.matchMedia('(max-width: 900px)').matches) {
+  anime({
+    targets: '.navbar-right',
+    translateX: '100%',
+    duration: 0
+  })
+}
+
+
+document.querySelector('.burger').addEventListener('click', () => {
+  if (translateValue == '0%') {
+    translateValue = '100%';
+  }else {
+    translateValue = '0%';
+  }
+
+  anime({
+    targets: '.navbar-right',
+    easing: 'easeInCubic',
+    duration: 400,
+    translateX: translateValue
+  })
+})
