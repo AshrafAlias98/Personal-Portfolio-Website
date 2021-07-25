@@ -19,18 +19,19 @@
                 <li class="nav-item projects"><a id="project-navigator-3">Projects</a></li>
                 <li class="nav-item contact-me"><a href="./contact.html">Contact Me</a></li>
                 <li class="navbar-icon">
-                    <img class="linkedin-mobile" src="./Assets/icons/linkedin-icon.png" alt="">
-                    <img class="github-mobile" src="./Assets/icons/github-icon.png" alt="">
+                    <a href="https://www.linkedin.com/in/ashraf-alias/" class="linked-in" target="_blank"><img class="linkedin-mobile" src="../Assets/Icons/linkedin-icon.png" alt=""></a>
+                    <a href="https://github.com/AshrafAlias98?tab=repositories" class="github" target="_blank"><img class="github-mobile" src="../Assets/Icons/github-icon.png" alt=""></a>
                 </li>
             </ul>
 
+            <!-- Burger icon -->
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
         </nav>
-        
+
         <!-- Background transition panel -->
         <section class="background-transition">
             <div class="panel box1"></div>
@@ -47,21 +48,23 @@
         </section>   
 
         <!-- Hero's panel content -->
-        <div class="container-header3">
-            <p class="contact-header">Get In Touch.</p>
-            <p class="contact-subheader">I'm open for any opportunities! Or just want to say hi?</p>
-            <p class="contact-subheader">Feel free to send me a message!</p>
-            <form id="contact-form" method="POST" action="../php/contact-form-handler.php">
-                <p class="contact-name">Name</p>
-                <input name="name" type="text" placeholder="Your Name" required>
-                <p class="contact-email">Email</p>
-                <input name="email" type="text" placeholder="Your Email" required>
-                <p class="contact-message">Message </p>
-                <input name="message" type="text" placeholder="Message" row="4" required>
-                <a href="#" class="horizontal"><span class="contact-button">SEND MESSAGE</span></a>
-            </form>
+        <div class="contact-flex-wrapper">
+            <div class="container-header3">
+                <p class="contact-header">Get In Touch.</p>
+                <p class="contact-subheader">I'm open for any opportunities! Or just want to say hi?</p>
+                <p class="contact-subheader">Feel free to send me a message!</p>
+                <form id="contact-form" method="POST" action="../php/contact-form-handler.php">
+                    <p class="contact-name">Name</p>
+                    <input name="name" type="text" placeholder="Your Name" required>
+                    <p class="contact-email">Email</p>
+                    <input name="email" type="text" placeholder="Your Email" required>
+                    <p class="contact-message">Message </p>
+                    <input name="message" type="text" placeholder="Message" row="4" required>
+                    <a href="#" class="horizontal"><span class="contact-button">SEND MESSAGE</span></a>
+                </form>
+            </div>
         </div>
-
+    
         <!-- Social media links -->
         <div class="social-media">
             <a href="https://www.linkedin.com/in/ashraf-alias/" class="socials linked-in" target="_blank">LINKEDIN</a>

@@ -23,7 +23,7 @@ $(document).ready(function() {
     var preloader = $('.sk-cube-wrapper');
     setTimeout(() => {
       preloader.fadeOut(preloaderFadeTime);
-    }, 100) 
+    }, 1000) 
   }
 
   hidePreloader();
@@ -114,7 +114,7 @@ function sliderCloseRightToLeft() {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.logo', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
+    targets: ['.logo', '.burger', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     delay: anime.stagger(50, {start: 200}),
     keyframes: [
       {
@@ -135,7 +135,7 @@ function fadeInFromTop() {
 // Fading out animation (Text, navbar, etc.)
 function fadeOut() {
   anime({
-    targets: ['.logo', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
+    targets: ['.logo', '.burger', '.navbar-right', '.home-text1', '.home-text2', '.home-text3', '.arrow-button', '.socials'],
     keyframes: [
       {
         opacity: 0,
@@ -188,7 +188,7 @@ setTimeout(() => {
   sliderOpeningBackgroundPanel();
   sliderOpenLeftToRight();
   fadeInFromTop();
-}, 100);
+}, 1000);
 
 // Detect the changes in media query (Changing size during runtime)
 const mediaQueryMobile = window.matchMedia('(max-width: 900px)');

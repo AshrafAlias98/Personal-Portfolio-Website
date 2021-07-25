@@ -11,6 +11,7 @@ const box6 = document.querySelector('.box6');
 const box8 = document.querySelector('.box8');
 const box10 = document.querySelector('.box10');
 
+var translateValue;
 
 $(document).ready(function() {
   //Preloader
@@ -41,7 +42,7 @@ function sliderOpenTopBackgroundPanel(partial) {
 
     anime({
       targets: [box1, box3, box5, box7, box9, box11],
-      scaleY: (el, i, t) => el==box1 || el==box3 || el==box5 ? 1 - (random(1, 1.25)/10) : 1 - (random(1, 2.5)/10),
+      scaleY: (el, i, t) => random(0.8, 0.95),
       duration: 300,
       easing: 'easeOutElastic',
       elasticity: 300,
@@ -67,7 +68,7 @@ function sliderOpenTopBackgroundPanel(partial) {
 // Fading in animation (Text, navbar, etc.)
 function fadeInFromTop() {
   anime({
-    targets: ['.navbar-right', '.project-header', '.about-me', '.card', '.socials', '.horizontal'],
+    targets: ['.logo', '.burger', '.navbar-right', '.project-header', '.about-me', '.card', '.socials', '.horizontal'],
     delay: anime.stagger(15, {start: 200}),
     keyframes: [
       {
@@ -89,7 +90,7 @@ function fadeInFromTop() {
 function fadeOut(inPlace) {
   if (!inPlace) {
     anime({
-      targets: ['.navbar-right' ,'.project-header', '.about-me', '.socials', '.horizontal'],
+      targets: ['.logo', '.burger', '.navbar-right' ,'.project-header', '.about-me', '.socials', '.horizontal'],
       keyframes: [
       {
           opacity: 0,
@@ -133,8 +134,6 @@ document.getElementById("contact-navigator-2").addEventListener('click', functio
 VanillaTilt.init(document.querySelectorAll(".card"), {
   max: 5,
   speed: 400,
-  glare: true,
-  "max-glare": "0.15"
 });
 
 // Function callbacks
@@ -142,3 +141,48 @@ setTimeout(() => {
   fadeInFromTop();
   sliderOpenTopBackgroundPanel(true);
 }, 500);
+
+
+// Detect the changes in media query (Changing size during runtime)
+const mediaQueryMobile = window.matchMedia('(max-width: 900px)');
+mediaQueryMobile.addEventListener('change', (e) => {
+  if (e.matches) {
+    anime({
+      targets: '.navbar-right',
+      translateX: '100%',
+      duration: 0
+    })
+  } else {
+    anime({
+      targets: '.navbar-right',
+      translateX: '0%',
+      duration: 0
+    })
+  }
+  translateValue = '100%';
+})
+
+// Detecting the changes in the initial media query (Static)
+if (window.matchMedia('(max-width: 900px)').matches) {
+  anime({
+    targets: '.navbar-right',
+    translateX: '100%',
+    duration: 0
+  })
+}
+
+
+document.querySelector('.burger').addEventListener('click', () => {
+  if (translateValue == '0%') {
+    translateValue = '100%';
+  }else {
+    translateValue = '0%';
+  }
+
+  anime({
+    targets: '.navbar-right',
+    easing: 'easeInCubic',
+    duration: 400,
+    translateX: translateValue
+  })
+})
