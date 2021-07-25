@@ -1,13 +1,18 @@
-.container-header3 {
+.contact-flex-wrapper {
+  position: absolute;
+  display: flex;
+  height: 85vh;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.contact-flex-wrapper .container-header3 {
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-content: stretch;
   background-color: rgba(10, 10, 10, 0.9);
-  margin-top: 5%;
-  margin-left: 28.5%;
-  height: 70vh;
-  width: 43%;
+  width: 50%;
   padding: 30px;
   border-radius: 10px;
   color: $primary-text-color;
@@ -17,7 +22,7 @@
 
   .contact-header {
     text-align: center;
-    font-size: 80px;
+    font-size: clamp(4.5rem, 8vw, 6rem);
     font-weight: bolder;
     margin-bottom: 2%;
   }
@@ -33,17 +38,14 @@
     flex-direction: column;
     flex-grow: 1;
     margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
 
     .contact-name {
       margin-top: 5%;
     }
 
-    .contact-email {
-      margin-top: 6%;
-    }
-
+    .contact-email,
     .contact-message {
       margin-top: 6%;
     }
@@ -69,26 +71,17 @@
       width: 100%;
       height: 60px;
       margin-top: 20px;
+      margin-bottom: 20px;
       border: 2px solid goldenrod;
       cursor: pointer;
       color: $primary-text-color;
       font-family: $primary-font;
       text-decoration: none;
+      font-weight: lighter;
 
       .contact-button {
         position: relative;
-        color: transparent;
-        background-image: linear-gradient(
-          90deg,
-          white 0%,
-          white 50%,
-          goldenrod 50%,
-          goldenrod 100%
-        );
-        background-repeat: repeat;
-        background-size: 200%;
-        background-position: 100% 0;
-        background-clip: text;
+        color: white;
         transition: background-position 300ms;
         font-weight: bolder;
       }
@@ -118,4 +111,153 @@
       }
     }
   }
+}
+
+// ===== MEDIA QUERIES ===== //
+// PC/ Large Tablet version
+@media screen and (max-width: 1200px) {
+  .contact-flex-wrapper {
+    margin-top: 6%;
+
+    .container-header3 {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+// Medium Tablet version
+@media screen and (max-width: 900px) {
+  .background-transition {
+    .box3 {
+      grid-column: 3/6;
+    }
+
+    .box7 {
+      grid-column: 7/10;
+    }
+
+    .box4,
+    .box5,
+    .box8,
+    .box9 {
+      z-index: -99;
+      position: absolute;
+    }
+  }
+
+  .navbar {
+    .logo {
+      margin-left: 6%;
+    }
+
+    .navbar-right {
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 6vh;
+      margin-right: 0%;
+      right: 0px;
+      top: 0px;
+      height: 100vh;
+      row-gap: 5vh;
+      width: 50%;
+      border-left: 1px solid $secondary-text-color;
+      border-top: 1px solid $secondary-text-color;
+      border-top-left-radius: 5px;
+      background-color: $primary-background-color;
+
+      .home {
+        margin-top: 30px;
+      }
+
+      .nav-item {
+        width: 85%;
+        text-align: center;
+      }
+    }
+
+    .burger {
+      margin-right: 6%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .navbar-icon {
+      display: flex;
+      height: 10%;
+      column-gap: 10%;
+
+      a .linkedin-mobile,
+      a .github-mobile {
+        width: 40%;
+        height: auto;
+        border-radius: 10%;
+
+        &:hover {
+          background-color: rgba(218, 165, 32, 0.7);
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+            rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          cursor: pointer;
+        }
+      }
+
+      .linked-in {
+        text-align: end;
+      }
+
+      .github {
+        text-align: start;
+      }
+    }
+  }
+
+  .social-media {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-flex-wrapper {
+    margin-top: 8%;
+
+    .container-header3 {
+      width: 86%;
+      padding: 25px;
+
+      #contact-form {
+        margin-left: 0%;
+        margin-right: 0%;
+      }
+    }
+  }
+}
+
+// Mobile version
+@media screen and (max-width: 600px) {
+  .background-transition {
+    .box3 {
+      grid-column: 3/10;
+    }
+
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9 {
+      z-index: -99;
+      position: absolute;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
 }
