@@ -212,3 +212,7 @@ document.querySelector('.burger').addEventListener('click', () => {
     translateX: translateValue
   })
 })
+
+document.getElementById('form-submit').onclick = function() {
+  document.getElementById('contact-form').submit();
+}
