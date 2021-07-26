@@ -53,14 +53,14 @@
                 <p class="contact-header">Get In Touch.</p>
                 <p class="contact-subheader">I'm open for any opportunities! Or just want to say hi?</p>
                 <p class="contact-subheader">Feel free to send me a message!</p>
-                <form id="contact-form" method="POST" action="../php/contact-form-handler.php">
+                <form id="contact-form" name="contact" method="POST" data-netlify="true">
                     <p class="contact-name">Name</p>
                     <input name="name" type="text" placeholder="Your Name" required>
                     <p class="contact-email">Email</p>
                     <input name="email" type="text" placeholder="Your Email" required>
                     <p class="contact-message">Message </p>
                     <input name="message" type="text" placeholder="Message" row="4" required>
-                    <a href="#" class="horizontal"><span class="contact-button">SEND MESSAGE</span></a>
+                    <a id="form-submit" href="#" class="horizontal"><span class="contact-button">SEND MESSAGE</span></a>
                 </form>
             </div>
         </div>

@@ -81,7 +81,7 @@
 
       .contact-button {
         position: relative;
-        color: white;
+        color: $primary-text-color;
         transition: background-position 300ms;
         font-weight: bolder;
       }
@@ -130,95 +130,6 @@
 
 // Medium Tablet version
 @media screen and (max-width: 900px) {
-  .background-transition {
-    .box3 {
-      grid-column: 3/6;
-    }
-
-    .box7 {
-      grid-column: 7/10;
-    }
-
-    .box4,
-    .box5,
-    .box8,
-    .box9 {
-      z-index: -99;
-      position: absolute;
-    }
-  }
-
-  .navbar {
-    .logo {
-      margin-left: 6%;
-    }
-
-    .navbar-right {
-      position: absolute;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 6vh;
-      margin-right: 0%;
-      right: 0px;
-      top: 0px;
-      height: 100vh;
-      row-gap: 5vh;
-      width: 50%;
-      border-left: 1px solid $secondary-text-color;
-      border-top: 1px solid $secondary-text-color;
-      border-top-left-radius: 5px;
-      background-color: $primary-background-color;
-
-      .home {
-        margin-top: 30px;
-      }
-
-      .nav-item {
-        width: 85%;
-        text-align: center;
-      }
-    }
-
-    .burger {
-      margin-right: 6%;
-      display: block;
-      cursor: pointer;
-    }
-
-    .navbar-icon {
-      display: flex;
-      height: 10%;
-      column-gap: 10%;
-
-      a .linkedin-mobile,
-      a .github-mobile {
-        width: 40%;
-        height: auto;
-        border-radius: 10%;
-
-        &:hover {
-          background-color: rgba(218, 165, 32, 0.7);
-          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-            rgba(0, 0, 0, 0.22) 0px 10px 10px;
-          cursor: pointer;
-        }
-      }
-
-      .linked-in {
-        text-align: end;
-      }
-
-      .github {
-        text-align: start;
-      }
-    }
-  }
-
-  .social-media {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -239,21 +150,6 @@
 
 // Mobile version
 @media screen and (max-width: 600px) {
-  .background-transition {
-    .box3 {
-      grid-column: 3/10;
-    }
-
-    .box4,
-    .box5,
-    .box6,
-    .box7,
-    .box8,
-    .box9 {
-      z-index: -99;
-      position: absolute;
-    }
-  }
 }
 
 @media screen and (max-width: 480px) {
