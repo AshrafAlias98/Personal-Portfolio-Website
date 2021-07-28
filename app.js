@@ -33,10 +33,10 @@ $(document).ready(function() {
 function sliderOpeningBackgroundPanel() {
   anime({
     targets: [box1, box3, box5, box7, box9, box11],
-    duration: 200,
+    duration: 300,
     easing: "easeInOutQuad",
     scaleX: 0,
-    delay: anime.stagger(50)
+    delay: anime.stagger(70)
   });
 }
 
@@ -57,10 +57,10 @@ function sliderClosingBackgroundPanel() {
         duration: 0,
       },
       {
-        duration: 200,
+        duration: 300,
         easing: "easeInOutQuad",
         scaleX: 1,
-        delay: anime.stagger(50),
+        delay: anime.stagger(70),
       },
     ]
   });
