@@ -18,13 +18,13 @@ Future work:
 
 <br>Below are the screenshots of the website interface 
 1. Home page
-![1](https://user-images.githubusercontent.com/79066503/126907477-d68ef4c9-dafc-42b2-b110-1f253edccd53.PNG)
+![1](https://user-images.githubusercontent.com/79066503/127368196-c1e875c3-47f3-4701-b776-295c17e41db0.PNG)
 
 2. Project page
-![2](https://user-images.githubusercontent.com/79066503/126907480-d172a305-e8d7-45fd-96ce-3cef974a8d41.PNG)
+![2](https://user-images.githubusercontent.com/79066503/127368212-093536e0-3d23-484d-a0aa-f5d1ce33a9ef.PNG)
 
 3. Contact page
-![3](https://user-images.githubusercontent.com/79066503/126907482-5bf98164-b297-4593-8d0c-c1c2983c397c.PNG)
+![3](https://user-images.githubusercontent.com/79066503/127368218-4530717a-1479-4488-9c87-bdb197d42144.PNG)
 
 
 Languages: HTML, S(CSS), JavaScript
